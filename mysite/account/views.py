@@ -42,6 +42,8 @@ def register(request):
             return render(request,
                           'account/register_done.html', 
                           { 'new_user': new_user })
+        else:
+            return HttpResponse('Form is not valid!')
     else:
         user_form = UserRegisterationForm()
         return render(request,
